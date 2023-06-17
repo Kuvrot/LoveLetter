@@ -4,24 +4,27 @@
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- JQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <!-- Third party-->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <script src="ThirdParty/summernote-lite.min.js"></script>
   <style>
 
-body {
-/* fallback for old browsers */
-background: #fccb90;
+    body {
+    /* fallback for old browsers */
+    background: #fccb90;
 
-/* Chrome 10-25, Safari 5.1-6 */
-background: -webkit-linear-gradient(to bottom right, rgba(252, 203, 144, 1), rgba(213, 126, 235, 1));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to bottom right, rgba(252, 203, 144, 1), rgba(213, 126, 235, 1));
 
-/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-background: linear-gradient(to bottom right, rgba(252, 203, 144, 1), rgba(213, 126, 235, 1))
-}
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to bottom right, rgba(252, 203, 144, 1), rgba(213, 126, 235, 1))
+    }
    
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
@@ -56,11 +59,11 @@ background: linear-gradient(to bottom right, rgba(252, 203, 144, 1), rgba(213, 1
       .row.content {height:auto;} 
     }
 
-.note-editor {
+    .note-editor {
 
-background-color: #ffff;
+    background-color: #ffff;
 
-}
+    }
 
 
   </style>
@@ -75,17 +78,19 @@ background-color: #ffff;
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>                        
         </button>
-        <a class="navbar-brand" href="#">Logo</a>
+        <a class="navbar-brand active" href="#">Logo</a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#" class="">Save</a></li>
+          <li><a href="#">Open</a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><a href="#" onclick="exportDoc()"><span class="glyphicon glyphicon-print"></span> Export </a></li>
+          <script src="main.js"></script>
+
         </ul>
       </div>
     </div>
@@ -97,7 +102,7 @@ background-color: #ffff;
 
     </div>
     <div class="col-sm-5 custom-summernote " style=" margin-left: 4.5; "> 
-      <div id="summernote" class=""  style=" "></div>
+      <div id="summernote" class="" ></div>
       <script>
         $('#summernote').summernote({
           //placeholder: 'Hello stand alone ui',

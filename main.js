@@ -10,7 +10,9 @@ const createWindow = () => {
     width: 1366,
     height: 768,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'preload.js'),
+      nodeIntegration: true,
+      contextIsolation: false
     }
   })
 
@@ -41,5 +43,25 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit()
 })
 
-// In this file you can include the rest of your app's specific main process
-// code. Tu también puedes ponerlos en archivos separados y requerirlos aquí.
+//This is for printing the document
+function exportDoc (){
+
+  console.log("you clicked");
+
+  var content = $('#summernote').summernote('code');
+  var doc = window.open('' , '_blank');
+  doc.document.write('<!DOCTYPE html> <html><head><title>Preview</title> <link rel="stylesheet" href="style/DocStyle.css"> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> </head><body> <div class="content">' + content + ' </div> </body></html>');
+  
+ // doc.onload = function () {
+  
+    setTimeout(function() {
+      doc.print();
+      doc.close();
+    }, 1000);
+    //doc.close();
+    
+  //};
+
+  
+
+}
