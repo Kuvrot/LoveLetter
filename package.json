@@ -1,0 +1,16 @@
+{
+  "name": "anel",
+  "version": "1.0.0",
+  "description": "simple text editor",
+  "main": "main.js",
+  "scripts": {
+
+        "start": "electron ."
+
+  },
+  "author": "Jaime Arturo",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "electron": "^25.1.1"
+  }
+}
