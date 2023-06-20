@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Love letter</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Bootstrap-->
@@ -13,64 +13,47 @@
   <!-- Third party-->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <script src="ThirdParty/summernote-lite.min.js"></script>
-  <style>
 
-    body {
-    /* fallback for old browsers */
-    background: #fccb90;
+  <link rel="stylesheet" href="style/style.css">
 
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to bottom right, rgba(252, 203, 144, 1), rgba(213, 126, 235, 1));
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const contentElement = document.querySelector('.editor');
+  
+        // method to adjus margin-left for the text editor
+        const adjustMarginLeft = () => {
+          const windowWidth = window.innerWidth;
+          
+          let porcentage = 0;
 
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to bottom right, rgba(252, 203, 144, 1), rgba(213, 126, 235, 1))
-    }
-   
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-    
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 450px}
-    
-    /* Set gray background color and 100% height */
-    .sidenav {
-      padding-top: 20px;
-      background-color: #f1f1f1;
-      height: 100%;
-    }
-    
-    /* Set black background color, white text and some padding */
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 1px;
-      margin-top: 19px;
-    }
-    
-    /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-        padding: 15px;
-      }
-      .row.content {height:auto;} 
-    }
+          // if the screen is small enough the margin will be 0, otherwise will be 28%
 
-    .note-editor {
+          if (windowWidth >= 950){
 
-    background-color: #ffff;
+            porcentage = 0.28;
 
-    }
+          }else {
 
+            porcentage = 0;
 
-  </style>
+          }
+
+          const marginLeft = Math.floor(windowWidth * porcentage); 
+  
+          contentElement.style.marginLeft = `${marginLeft}px`;
+        };
+  
+        adjustMarginLeft();
+  
+        //adjust screen size when the screen size changes
+        window.addEventListener('resize', adjustMarginLeft);
+      });
+    </script>
+
 </head>
 <body>
 
-  <nav class="navbar navbar-inverse navbar-expand-lg navbar-dark bg-dark sticky-top navbar-expand-lg" style="margin-bottom: 1%;">
+  <nav class="navbar col sm-1 navbar-inverse navbar-expand-lg navbar-dark bg-dark container-fluid sticky-top" style="margin-bottom: 1%;">
     <div class="container-fluid ">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -78,12 +61,12 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>                        
         </button>
-        <a class="navbar-brand active" href="#">Logo</a>
+        <a class="navbar-brand active " href="#"> LoveLetter</a>
       </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
+      <div class="collapse navbar-collapse " id="myNavbar" >
         <ul class="nav navbar-nav">
-          <li><a href="#" class="">Save</a></li>
-          <li><a href="#">Open</a></li>
+          <li><a href="#" onclick="save()">Save</a> <script src="scripts/saveFile.js"> </script></li>    
+          <li><a href="#" onclick="importData()"> <script src="scripts/openFile.js"></script> Open</a></li>
           <li><a href="#"></a></li>
           <li><a href="#"></a></li>
         </ul>
@@ -96,12 +79,9 @@
     </div>
   </nav>
 
-<div class="container-fluid" >    
+<div class="container-fluid editor"  >    
   <div class="row content " >
-    <div class="col-sm-3 parts" style="margin-right:4%;">
-
-    </div>
-    <div class="col-sm-5 custom-summernote " style=" margin-left: 4.5; "> 
+    <div class="col-sm-1 col-md-1 custom-summernote " > 
       <div id="summernote" class="" ></div>
       <script>
         $('#summernote').summernote({
@@ -128,7 +108,7 @@
       </script>
     </div>
 
-    <div class="col-sm-4 parts"  style="margin-left: 10%;">
+    <div class=""  style="margin-left: 10%;">
     </div>
   </div>
   
@@ -136,8 +116,8 @@
 
 <footer class="container-fluid">
 
-  <p class="col-sm-5 text-left">  Developed by Jaime Arturo </p>
-  <p class="col-sm-2 text-center">  Total words: 0000 </p>
+  <p class="text-left " style="display: inline; margin-right:0.1%;">  Developed by Jaime Arturo </p>
+  <p class="text-right" style="display: inline;"> | Version 1.0.0 </p>
   
 </footer>
 

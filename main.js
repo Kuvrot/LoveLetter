@@ -43,6 +43,8 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit()
 })
 
+
+
 //This is for printing the document
 function exportDoc (){
 
@@ -52,15 +54,11 @@ function exportDoc (){
   var doc = window.open('' , '_blank');
   doc.document.write('<!DOCTYPE html> <html><head><title>Preview</title> <link rel="stylesheet" href="style/DocStyle.css"> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> </head><body> <div class="content">' + content + ' </div> </body></html>');
   
- // doc.onload = function () {
-  
     setTimeout(function() {
       doc.print();
       doc.close();
     }, 1000);
-    //doc.close();
-    
-  //};
+
 
   
 
