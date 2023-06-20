@@ -14,11 +14,14 @@ const createWindow = () => {
       nodeIntegration: true,
       contextIsolation: false
     },
+    autoHideMenuBar:true,
     icon: 'loveLetter.ico',
   })
 
   // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
+  mainWindow.setMenu(null);
+  mainWindow.setMenuBarVisibility(false);
+  mainWindow.loadFile('index.html');
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
