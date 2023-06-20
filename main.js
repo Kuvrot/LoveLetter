@@ -13,7 +13,8 @@ const createWindow = () => {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true,
       contextIsolation: false
-    }
+    },
+    icon: 'loveLetter.ico',
   })
 
   // and load the index.html of the app.
