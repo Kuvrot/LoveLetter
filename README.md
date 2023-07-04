@@ -19,7 +19,9 @@ You can download LoveLetter (binary) here : https://kuvrot.itch.io/loveletter
 
 ## Run source code
 
-Install electron in the project folder, you can use this quick guide: https://www.electronjs.org/es/docs/latest/tutorial/quick-start
+- Install electron in the project folder, you can use this quick guide: https://www.electronjs.org/es/docs/latest/tutorial/quick-start
+
+- Add the files in your project folder (replacing the default the default files).
 
 to run LoveLetter type
 ```bash
